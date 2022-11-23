@@ -17,4 +17,13 @@ public class Persona {
     public void setNazioneDiResidenza(String nazioneDiResidenza) {
         this.nazioneDiResidenza = nazioneDiResidenza;
     }
+    public String getNazioneDiResidenza() {
+        return nazioneDiResidenza;
+    }
+    public String getNome() {
+        return nome;
+    }
+    public String getCognome() {
+        return cognome;
+    }
 }

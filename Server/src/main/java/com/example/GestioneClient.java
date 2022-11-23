@@ -29,10 +29,6 @@ public class GestioneClient extends Thread {
     public void run() {
         String richiesta = "";
         boolean controllo= true;
-
-        
-        
-
         while(controllo){
             try{
             richiesta = br.readLine();
@@ -51,6 +47,23 @@ public class GestioneClient extends Thread {
               p.setNazioneDiResidenza(nazione);
 
               persone.add(p);
+              pr.println("Persona aggiunta con successo puoi fare un altro comando");
+            }else if (richiesta.equalsIgnoreCase("n")){
+                pr.println("Dimmi una nazione");
+                String nazione = br.readLine();
+                int conta=0;
+                for(int i=0; i<persone.size(); i++){
+                    if(persone.get(i).getNazioneDiResidenza().equals(nazione)){
+                        pr.println("\n"+persone.get(i).getNome()+" "+ persone.get(i).getCognome()+" è "+ persone.get(i).getNazioneDiResidenza());
+                        conta++;
+                    }
+                }
+                if(conta == 0){
+                    pr.println("Non sono presenti persone da questa nazione");
+                }
+
+                pr.println("Ricerca effettuata con successo puoi fare un altro comando");
+
             }
         }catch(Exception e){
             System.out.println(e.getMessage());
