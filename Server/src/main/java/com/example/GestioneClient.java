@@ -54,7 +54,7 @@ public class GestioneClient extends Thread {
                 int conta=0;
                 for(int i=0; i<persone.size(); i++){
                     if(persone.get(i).getNazioneDiResidenza().equals(nazione)){
-                        pr.println("\n"+persone.get(i).getNome()+" "+ persone.get(i).getCognome()+" è "+ persone.get(i).getNazioneDiResidenza());
+                        pr.println(persone.get(i).getNome()+" "+ persone.get(i).getCognome()+" è "+ persone.get(i).getNazioneDiResidenza());
                         conta++;
                     }
                 }
@@ -64,6 +64,11 @@ public class GestioneClient extends Thread {
 
                 pr.println("Ricerca effettuata con successo puoi fare un altro comando");
 
+            }else if(richiesta.equalsIgnoreCase("c")){
+                pr.println("l'elenco completo è:");
+                for(int i=0; i<persone.size(); i++){
+                    pr.println(persone.get(i).getNome()+" "+ persone.get(i).getCognome()+" "+ persone.get(i).getNazioneDiResidenza());
+                }
             }
         }catch(Exception e){
             System.out.println(e.getMessage());
